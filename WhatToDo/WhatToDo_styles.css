@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;  padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    outline: none; border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+:root{
+    --orange:#ffa500;
+}
+*::selection{
+    background:var(--orange) ;
+    color: #fff;
+}
+html{
+    overflow-x: hidden;
+    scroll-padding-top: 6rem;
+    scroll-behavior: smooth;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: black;
+    color: white;
+    padding: .8rem 3rem;
+    border: .2rem solid white;
+    cursor: pointer; font-size: 1rem;
+}
+.btn:hover{
+    background-color:rgba(7, 7, 7, 0.73) ;
+}
+
+/* Header Code Starts Here */
+
+header{
+    position: fixed; z-index: 1000;
+    top: 0; left: 0; right: 0;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 2rem 9%; background-color: #333;
+}
+header .logo{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+header .logo span{
+    color: var(--orange);
+}
+header .navbar a{
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 1rem;
+    text-decoration: none;
+}
+header .navbar a:hover{
+    color: var(--orange);
+}
+header .icons i{
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 2rem;
+}
+header .icons i:hover{
+    color: var(--orange);
+}
+
+
+/*Destinations Search Start Here*/
+header .search-bar-container{
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    padding: 1.5rem 2rem;
+    background-color: #333;
+    border-top: .1rem solid rgba(255,255,255,.2);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+header .search-bar-container .search-box {
+    display: flex; align-items: center; z-index: 1001;
+}
+
+header .search-bar-container.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+header .search-bar-container #search-bar{
+    width: 100%;
+    padding: 1rem;
+    text-transform: none;
+    color: #333;
+    font-size: 1.7rem; border-radius: .5rem;
+}
+
+header .search-bar-container label{
+    color: #fff;
+    cursor: pointer;
+    font-size: 3rem;
+    margin-left: 1.5rem; 
+}
+
+header .search-bar-container label:hover{
+    color: var(--orange);    
+}
+
+.result-box-container {
+    background: white;
+    width: calc(100% - 72px);
+    display: none;
+    margin-top: -.4rem;
+    padding: 1rem;
+    border-radius: 0rem 0rem .5rem .5rem;
+    font-size: 1.7rem;
+}
+
+.result-box ul {
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+}
+
+.result-box ul li {
+    border-radius: .5rem;
+    list-style: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.result-box ul li.highlight {
+    background: rgba(255, 166, 0, 0.884);
+}
+
+.result-box-container ul li:hover {
+    background: rgba(255, 166, 0, 0.884);
+}
+
+/* Login Container Starts Here */
+.login-form-container{
+    position: fixed;
+    top:-120%; left: 0;
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0,.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.login-form-container.active{ /* Transition Out for Form */
+    top: 0;
+}
+
+.login-form-container form{
+    margin:2rem;
+    padding: 1.5rem 2rem;
+    border-radius: .5rem;
+    background-color: #fff;
+    width: 50rem;
+}
+
+.login-form-container form h3{
+    font-size: 3rem;
+    color: #444;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.login-form-container form .box{
+    width: 100%;
+    padding: 1rem;
+    color: #333;
+    margin: .6rem 0;
+    border: .1rem solid rgba(0,0,0,.3);
+    text-transform: none;
+}
+
+.login-form-container form .box:focus{
+    border-color: orange;
+}
+
+.login-form-container form #remember{
+    margin: 2rem 0;
+}
+
+.login-form-container form label{
+    font-size: 1.5rem;
+}
+
+.login-form-container form .btn{
+    display: block;
+    width: 100%;
+}
+
+.login-form-container form p{
+    padding: .5rem 0;
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.login-form-container form a{
+    color: orange;
+}
+
+.login-form-container form a:hover{
+    color: #333;
+    text-decoration: underline;
+}
+
+.login-form-container #form-close{
+    position: absolute;
+    top: 2rem; right: 3rem;
+    font-size: 5rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Menu Bar */
+#menu-bar{
+    color: #fff;
+    border: .1rem solid #fff;
+    border-radius: 0.5rem;
+    font-size: 3rem;
+    padding:.5rem 1.2rem;
+    cursor: pointer;
+    display: none;
+}
+
+/* WhatToDo */
+section{
+    padding: 100px 20px;
+
+}
+
+.home{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.home:before{
+    z-index: 777;
+    content:'';
+    position: absolute;
+    background: rgba(56, 32, 4, 0.395);
+    width: 100%;
+    height:100%;
+    top: 0;
+    left: 0;
+}
+
+.home .content{
+    z-index: 888;
+    width: 70%;
+    margin-top: 50px;
+    display: none;
+}
+
+.home .content.active{
+    display: block;
+}
+
+.home .content h1{
+    font-size:4em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 75px;
+    margin-bottom: 40px;
+    color:rgb(255, 255, 255);
+}
+
+.home .content h1 span{
+    font-size:1.2em;
+    font-weight: 600;
+}
+
+.home .content p{
+    color:rgb(254, 253, 253);
+    font-size: 1.2rem;
+    margin-bottom: 65px;
+    text-shadow: 1px 1px black;
+}
+
+.home .content a{
+    background: #d99228;
+    padding: 15px 35px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration:none;
+    border-radius: 2px;
+}
+
+.home img{
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-navigation{
+    z-index: 888;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(80px);
+    margin-bottom: 12px;
+}
+
+.slider-navigation .nav-btn{
+    width: 3rem;
+    height: 3rem;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(255,255,255,0.5);
+    transition: 0.3s ease;
+}
+
+.slider-navigation .nav-btn.active{
+    background: grey;
+}
+
+.slider-navigation .nav-btn:not(:last-child){
+    margin-right: 20px;
+}
+
+.slider-navigation .nav-btn:hover{
+    transform: scale(1.2);
+}
+
+.background-image{
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+    opacity: 0.8;
+}
+
+.background-image.active{
+    clip-path: circle(150.0% at 0 50%);
+    transition: 2s ease;
+    transition-property: clip-path;
+}
+
+/* Footer Here */
+.footer{
+    background-color: #333;
+}
+
+.footer .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer .box-container .box{
+    padding: 1rem 0;
+    flex: 1 1 25rem;
+    flex-direction: column;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    padding: .7rem 0;
+    color: #fff;
+}
+
+.footer .box-container .box a{
+    display: block
+    ;
+    font-size: 1.5rem;
+    padding: .7rem 0;
+    color: #eee;
+}
+
+.footer .box-container .box p{
+    color: #eee;
+}
+
+.footer .box-container .box a:hover{
+    color: #ffa500;
+    text-decoration: underline;
+}
+
+.footer .credit{
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: normal;
+    color: #fff;
+    border-top: .11rem solid rgba(255,255,255,.2);
+}
+
+.footer .credit span{
+    color: #ffa500;
+}
+
+@media screen and (max-width: 768px) {
+    .parallax {
+      background-size: 100% auto;
+    }
+  }
+
+/* media queries */
+@media (max-width:1200px){
+    html{
+        font-size: 55%;
+    }
+}
+
+@media (max-width:991px){
+    header{
+        padding: 2rem;
+    }
+}
+
+@media (max-width:768px){
+    #menu-bar{
+        display: initial;
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%; right: 0; left: 0;
+        background-color: #333;
+        border-top: .1rem solid rgba(255,255,255,.2);
+        padding: 1rem 2rem;
+        clip-path: polygon(0 0, 100% 0,100% 0,0 0);
+    }
+
+    header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    header  .navbar a{
+        display: block;
+        border-radius: .5rem;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        background-color: #222;
+    }
+}
+
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+}
+

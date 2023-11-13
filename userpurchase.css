@@ -1,0 +1,39 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.package-container {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.box {
+    color: #343a40;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #ff6600;
+}
+
+.btn-orange {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-orange:hover {
+    background-color: #cc5200;
+}
